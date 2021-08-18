@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoFilter</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <h1 class="header__name">MY PhotoFilter</h1>
+                <a href="https://github.com/Dmitriy-hello-world" target="_blank" class="header__link">My GitHub</a>
+            </div>
+        </div>
+    </header>
+    <main class="filter">
+        <div class="container">
+            <div class="filter__wrapper">
+                <div class="filter__side">
+                    <ul class="filter__list">
+                        <li class="filter__item">
+                            <div class="filter__item-name">Blur</div>
+                            <div class="filter__input-block">
+                                <input name="blur" data-sizing="px" type="range" class="filter__input" min="0" max="10"
+                                    value="0">
+                                <div class="filter__output">0</div>
+                            </div>
+                        </li>
+                        <li class="filter__item">
+                            <div class="filter__item-name">Invert</div>
+                            <div class="filter__input-block">
+                                <input name="invert" data-sizing="%" type="range" class="filter__input" min="0"
+                                    max="100" value="0">
+                                <div class="filter__output">0</div>
+                            </div>
+                        </li>
+                        <li class="filter__item">
+                            <div class="filter__item-name">Sepia</div>
+                            <div class="filter__input-block">
+                                <input name="sepia" data-sizing="%" type="range" class="filter__input" min="0" max="100"
+                                    value="0">
+                                <div class="filter__output">0</div>
+                            </div>
+                        </li>
+                        <li class="filter__item">
+                            <div class="filter__item-name">Saturate</div>
+                            <div class="filter__input-block">
+                                <input name="saturate" data-sizing="%" type="range" class="filter__input" min="0"
+                                    max="200" value="100">
+                                <div class="filter__output">0</div>
+                            </div>
+                        </li>
+                        <li class="filter__item">
+                            <div class="filter__item-name">Hue rotate</div>
+                            <div class="filter__input-block">
+                                <input name="hue-rotate" data-sizing="deg" type="range" class="filter__input" min="0"
+                                    max="360" value="0">
+                                <div class="filter__output">0</div>
+                            </div>
+                        </li>
+                        <li class="filter__item">
+                            <div class="filter__item-name">Contrast</div>
+                            <div class="filter__input-block">
+                                <input name="contrast" data-sizing="%" type="range" class="filter__input" min="0"
+                                    max="200" value="100">
+                                <div class="filter__output">0</div>
+                            </div>
+                        </li>
+                        <li class="filter__item">
+                            <div class="filter__item-name">Brightness</div>
+                            <div class="filter__input-block">
+                                <input name="brightness" data-sizing="%" type="range" class="filter__input" min="0"
+                                    max="200" value="100">
+                                <div class="filter__output">0</div>
+                            </div>
+                        </li>
+                        <li class="filter__item">
+                            <div class="filter__item-name">Grayscale</div>
+                            <div class="filter__input-block">
+                                <input name="grayscale" data-sizing="%" type="range" class="filter__input" min="0"
+                                    max="100" value="0">
+                                <div class="filter__output">0</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter__img">
+                    <img src="./img/1.jpg" alt="image" class="fiter__main-img" data-img=''>
+                    <canvas class="canvas" width="900" height="500"></canvas>
+                </div>
+                <div class="filter__btns">
+                    <button class="filter__btn" id="reset">
+                        Reset
+                    </button>
+                    <button class="filter__btn" id="next">
+                        Next image
+                    </button>
+                    <label for="load" class="filter__btn filter__load">
+                        <input type="file" placeholder="Load image" id="load" accept=".jpg, .jpeg, .png, .gif">
+                        Load image
+                    </label>
+                    <button class=" filter__btn" id="save">
+                        Save image
+                    </button>
+                </div>
+                <div class="filter__presets">
+                    <div class="filter__preset">
+                        <a href="#" class="filter__preset-link">
+                            <img id="normal" src="./img/1.jpg" alt="preset" data-filter="0 0 0 100 0 100 100 0"
+                                data-img=''>
+                            <div class="filter__preset-name">Normal</div>
+                        </a>
+                    </div>
+                    <div class="filter__preset">
+                        <a href="#" class="filter__preset-link">
+                            <img id="aden" src="./img/1.jpg" alt="preset" data-filter="0 0 0 85 20 90 120 0"
+                                data-img=''>
+                            <div class="filter__preset-name">Aden</div>
+                        </a>
+                    </div>
+                    <div class="filter__preset">
+                        <a href="#" class="filter__preset-link">
+                            <img id="old" src="./img/1.jpg" alt="preset" data-filter="0 0 0 130 0 110 110 0"
+                                data-img=''>
+                            <div class="filter__preset-name">Old</div>
+                        </a>
+                    </div>
+                    <div class="filter__preset">
+                        <a href="#" class="filter__preset-link">
+                            <img id="brannan" src="./img/1.jpg" alt="preset" data-filter="0 0 50 100 0 140 100 0"
+                                data-img=''>
+                            <div class="filter__preset-name">Brannan</div>
+                        </a>
+                    </div>
+                    <div class="filter__preset">
+                        <a href="#" class="filter__preset-link">
+                            <img id="brooklyn" src="./img/1.jpg" alt="preset" data-filter="0 0 0 100 0 90 110 0"
+                                data-img=''>
+                            <div class="filter__preset-name">Brooklyn</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__logo">
+                    <a href="https://rs.school/js/" target="_blank">
+                        <img src="/img/rs_school_js.svg" alt="RS school">
+                    </a>
+                </div>
+                <div class="footer__copy">© 2021</div>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>

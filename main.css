@@ -1,0 +1,218 @@
+:root {
+    --blur: 0px;
+    --invert: 0%;
+    --sepia: 0%;
+    --saturate: 100%;
+    --hue-rotate: 0deg;
+    --contrast: 100%;
+    --brightness: 100%;
+    --grayscale: 0%;
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+}
+
+body {
+    background: linear-gradient(180deg, rgb(71, 66, 66), #262626);
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.header__name {
+    font-size: 36px;
+    color: #fff;
+    margin: 0;
+}
+
+.header__link {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.header__link:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.filter {
+    padding: 50px 0;
+}
+
+.filter__wrapper {
+    display: grid;
+    grid-template-columns: 300px 900px;
+    grid-template-rows: auto auto;
+    column-gap: 110px;
+    row-gap: 30px;
+}
+
+.fiter__main-img {
+    width: 100%;
+    filter: blur(var(--blur)) invert(var(--invert)) sepia(var(--sepia)) saturate(var(--saturate)) hue-rotate(var(--hue-rotate)) contrast(var(--contrast)) brightness(var(--brightness)) grayscale(var(--grayscale));
+}
+
+.filter__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.filter__item {
+    margin-top: 20px;
+}
+
+.filter__item:nth-child(1) {
+    margin-top: 0;
+}
+
+.filter__input {
+    width: 250px;
+    height: 3px;
+    background-color: #26242a;
+    border-radius: 0.25rem;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.filter__input-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter__output {
+    font-size: 18px;
+}
+
+.filter__input::-moz-range-progress {
+    background: #66656a;
+}
+
+.filter__item-name {
+    color: #fff;
+    font-size: 18px;
+}
+
+.filter__presets {
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    column-gap: 10px;
+}
+
+.filter__preset-link {
+    width: 100%;
+}
+
+.filter__preset-link img {
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.filter__preset-name {
+    color: #66656a;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.filter__preset-link:hover .filter__preset-name {
+    color: #fff;
+}
+
+.filter__preset-link:hover img {
+    scale: 1.1;
+}
+
+.filter__preset-link:hover {
+    text-decoration: none;
+}
+
+#normal {
+    filter: blur(0px) invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) contrast(100%) brightness(100%) grayscale(0%);
+}
+
+#aden {
+    filter: blur(0px) invert(0%) sepia(0%) saturate(85%) hue-rotate(20deg) contrast(90%) brightness(120%) grayscale(0%);
+}
+
+#old {
+    filter: blur(0px) invert(0%) sepia(0%) saturate(130%) hue-rotate(0deg) contrast(110%) brightness(110%) grayscale(0%);
+}
+
+#brannan {
+    filter: blur(0px) invert(0%) sepia(50%) saturate(100%) hue-rotate(0deg) contrast(140%) brightness(100%) grayscale(0%);
+}
+
+#brooklyn {
+    filter: blur(0px) invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) contrast(90%) brightness(110%) grayscale(0%);
+}
+
+.filter__btns {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, minmax(auto, 55px));
+    gap: 10px;
+}
+
+.filter__btn {
+    border-radius: 15px;
+    background: rgb(172, 165, 165);
+    color: #000;
+    border: 1px solid rgba(71, 66, 66, 0);
+}
+
+.filter__load {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter__btn:hover {
+    border: 1px solid black;
+    background: rgba(71, 66, 66, 0.4);
+    color: #fff;
+}
+
+.footer {
+    background: rgb(25, 24, 24);
+    height: 70px;
+    padding: 15px;
+}
+
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__logo a img {
+    width: 120px;
+}
+
+.footer__copy {
+    font-size: 16px;
+    color: rgb(130, 120, 120);
+}
+
+#load {
+    display: none;
+}
+
+.canvas {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
